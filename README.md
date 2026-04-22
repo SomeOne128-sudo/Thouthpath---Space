@@ -1,6 +1,6 @@
-# Co-Teleological Interaction Prototype
+# Thouthpath Prototype
 
-This is a research prototype designed to explore **Co-Teleological Interaction** — a paradigm where humans and AI collaboratively define, reflect on, and evolve goals over time. More on this study at: [add paper link future]. 
+This is a research prototype designed to explore an interaction design concept where humans and AI collaboratively define, reflect on, and evolve goals over time. More on this study at: [add paper link future]. 
 
 The prototype enables:
 - Simple and easy-to-use interface；
@@ -25,7 +25,7 @@ This system has been developed as part of an academic investigation, code files 
 
 
 # There are two ways to experience the prototype
-### Option 1： Go directly to www.co-teleological.space
+### Option 1： Go directly to [Thouthpath on web](https://www.co-teleological.space/)
 ### Option 2： Deploy/run it locally
 
 ## How to deploy/Run Locally
