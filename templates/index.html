@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ThoughtPaths</title>
+  <!-- Your other head information -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <!-- Navigation bar -->
+  <nav class="navbar">
+    <div class="nav-left">ThoughtPaths</div>
+    <div class="nav-right">
+      <button class="nav-button" id="about-btn">About</button>
+      <!--<button class="nav-button" id="help-btn">Help</button>-->
+      <!-- Setting button: replaces the original configBtn function -->
+      <button class="nav-button" id="setting-btn">Setting</button>
+      <button id="save-btn" class="nav-button">Export</button>
+      <!--<button class="nav-button" id="export-page-btn">Export</button>-->
+    </div>
+  </nav>
+
+  <!-- Button group container -->
+  <div id="journey-btn-group">
+    <!-- Journey button -->
+    <button id="journey-toggle-btn" title = "Click to expand/collapse journey panel">
+      <img 
+        src="{{ url_for('static', filename='journey.png') }}" 
+        alt="Journey"
+      >
+    </button>
+    <!-- New Summary button -->
+    <!--<button id="summary-btn">
+      <img
+        src="{{ url_for('static', filename='summary.png') }}"
+        alt="Summary"
+      >
+    </button>-->
+  </div>
+
+  <!-- Main view container -->
+  <div id="viewport" class="viewport">
+    <div id="root" class="container">
+      <!-- Root unit (example) -->
+      <div class="interactive-unit" style="--level:0;" data-index="">
+        <div class="root-input-row">
+          <input type="text" placeholder="Enter your prompt here..." class="root-input">
+          <button class="root-run-button" onclick="onRunClick(this)">
+            <img src="{{ url_for('static', filename='send.png') }}" alt="Run Icon" />
+          </button>
+        </div>
+        <div class="response"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom black transparent text container (will fade out when the Run button is clicked on the root unit) -->
+  <div class="bottom-info">
+    <div class="info-box">
+      <h2>Welcome to ThoughtPaths </h2>
+      <p>ThoughtPaths helps you explore complex questions through multiple branching perspectives. Rather than giving a single fixed answer, it supports reflection, comparison, and discussion by opening up different possible directions for thinking and inquiry.</p>
+    </div>
+  </div>
+
+  <!-- Modal window: hidden by default, shown after clicking Help, hidden when clicking close X or blank space -->
+  <div id="helpModal" class="modal">
+    <div class="modal-content">
+      <span id="helpModalClose" class="modal-close">&times;</span>
+      <!-- Show help image, assumed to be help.png in the static/ folder -->
+      <img 
+        src="{{ url_for('static', filename='help.png') }}" 
+        alt="Help Tutorial" 
+        style="max-width: 100%;"
+      >
+    </div>
+  </div>
+
+  <!-- About modal window, hidden initially -->
+  <div id="aboutModal" class="modal">
+  <div class="modal-content">
+    <span id="aboutModalClose" class="modal-close">&times;</span>
+    <h2>ThoughtPaths</h2>
+    <p>
+      ThoughtPaths is an interactive prototype designed to support reflective exploration through branching AI responses. Instead of guiding users toward a single answer, it helps surface alternative directions, compare perspectives, and keep inquiry open over time.
+    </p>
+    <p>The prototype enables:</p>
+    <ul>
+      <li>A simple and easy-to-use interface;</li>
+      <li>Generation of <strong>multiple AI responses per user input</strong>, each offering a distinct perspective;</li>
+      <li>Iterative and reflective exploration through a <strong>multi-branch conversation interface</strong>;</li>
+      <li>A <strong>Journey panel</strong> that visualizes the dialogue path and key moments in the interaction;</li>
+      <li><strong>Summary generation</strong> across branches for sense-making;</li>
+      <li><strong>Image generation</strong> to support exploratory thinking;</li>
+      <li>Export of the session as a <code>.doc</code> file.</li>
+    </ul>
+    <p style="margin-top: 20px;">
+      This system was developed as part of an academic research project and is structured to support direct review and experimentation.
+    </p>
+  </div>
+</div>
+
+  <!-- Summary modal window, hidden initially -->
+  <div id="summaryModal" class="modal">
+    <div class="modal-content">
+      <span id="summaryModalClose" class="modal-close">&times;</span>
+      <h2>Summary of All Branches</h2>
+      <div id="summaryModalBody">
+        <!-- Summary content will be inserted here by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating container to show root unit input content -->
+  <div id="floating-rootprompt">
+    <span id="rootprompt-text"></span>
+  </div>
+
+  <!-- Journey sidebar -->
+  <div id="journeyPanel" class="journey-panel">
+    <div class="journey-panel-content" id="journeyPanelContent">
+      <!-- Specific user/assistant content will be inserted here dynamically by JS -->
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
