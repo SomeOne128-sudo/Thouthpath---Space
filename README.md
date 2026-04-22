@@ -15,8 +15,8 @@ This system has been developed as part of an academic investigation, code files 
 
 
 <p align="center">
-  <img src="screenshot1.png" width="45%" style="margin-right: 10px;">
-  <img src="screenshot2.png" width="45%">
+  <img src="screenshot2.png" width="45%" style="margin-right: 10px;">
+  <img src="screenshot1.png" width="45%">
 </p>
 
 <p align="center">
